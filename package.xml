@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>method_callback</name>
+  <version>0.0.0</version>
+  <description>The method_callback package</description>
+
+  <maintainer email="t_ueno@eis.hokudai.ac.jp">Takaki Ueno</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">https://github.com/uenota/method_callback</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>dynamic_reconfigure</depend>
+
+  <export>
+  </export>
+</package>
