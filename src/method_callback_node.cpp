@@ -2,11 +2,10 @@
 
 MCClass::MCClass(int argc, char** argv) : BaseNode(argc, argv, "method_callback")
 {
-  auto msgcb = boost::bind(&MCClass::msgCallback, _1);
-  sub = nh.subscribe<std_msgs::String>("chatter", 10, msgcb);
+  sub = nh.subscribe<std_msgs::String>("chatter", 10, &MCClass::msgCallback, this);
 
   dynamic_reconfigure::Server<method_callback::MethodCallbackConfig>::CallbackType cfgcb;
-  cfgcb = boost::bind(&MCClass::cfgCallback, _1, _2);
+  cfgcb = boost::bind(&MCClass::cfgCallback, this, _1, _2);
   cfgServer.setCallback(cfgcb);
 }
 
